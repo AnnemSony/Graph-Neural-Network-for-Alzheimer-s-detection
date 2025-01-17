@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Graph Convolutional Network(GCN) Model</title>
+    <style>
+      body {
+        background-color: lightcyan;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1{
+        font-size:46px;
+      }
+      p{
+        font-size: 24px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align:center; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Graph Convolutional Network Model</h1>
+    <p>GCN (Graph Convolutional Network) is a type of neural network designed to work with graph data, such as brain connectivity measures. The goal of GCN is to learn node-level or graph-level representations of the input graph, which can then be used for a variety of downstream tasks such as node classification or link prediction.</p>
+    <p>In the context of brain connectivity, GCN can be used to predict the category of an individual (CN, AD, LMCI, SMC, or EMCI) based on their connectivity measures. This can help with diagnosis and understanding of neurodegenerative diseases such as Alzheimer's disease.</p>
+    
+    {% if prediction %}
+      {% if prediction == 0 %}
+      <p style="color: green;">The predicted class is CN(cognitively normal).</p>
+      {% elif prediction == 1 %}
+        <p style="color: red;">The predicted class is AD(Alzheimer's disease).</p>
+      {% elif prediction == 2 %}
+        <p>The predicted class is LMCI(mild cognitive impairment).</p>
+      {% elif prediction == 3 %}
+        <p>The predicted class is SMC(subjective memory complaints).</p>
+      {% elif prediction == 4 %}
+        <p>The predicted class is EMCI(early mild cognitive impairment).</p>
+      {% endif %}
+    {% endif %}
+    <br>
+    <form action="/gcn_predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".xls, .xlsx, .csv"><br><br>
+      <input type="submit" value="Upload and Predict">
+    </form> 
+    <br>
+    <!-- Add a back button to go back to the home page -->
+    
+      <header>
+        <nav>
+          <ul>
+            <li style="display: inline-block; margin-right: 20px;"><a href="/">Home</a></li>
+            <li style="display: inline-block; margin-right: 20px;"><a href="/gcn">GCN</a></li>
+            <li style="display: inline-block;"><a href="/gat">GAT</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+    
+    
+  </body>
+</html>

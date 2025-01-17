@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My GNN App - README</title>
+    <style>
+      body {
+        background-color: lightcyan;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        color: red;
+      }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border: 1px solid black;
+        width: 50%;
+      }
+      th, td {
+        text-align: center;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      th {
+        background-color: lightgray;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Project Details</h1>
+    <p>This is a web application for benchmarking Graph Neural Network (GNN) models. The application currently supports two GNN models, Graph Convolutional Network (GCN) and Graph Attention Network (GAT).</p>
+    <p>We have multiple barin connectivity datafiles for 908 patients,each patient brain is divided into 160 regions were each region is taken as a node and connection between the regions were noted as weights.</p>
+    <img src="static/images/brain.jpg" alt="Brain Image" style="width: 60%; height: 60%; display: block; margin: 0 auto;">
+    <p>The categories of the labels in the brain connectivity dataset, with the number of examples for each label, are:</p>
+    <table>
+      <tr>
+        <th>Label</th>
+        <th>Number of Examples</th>
+        <th>Category</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>229</td>
+        <td>CN: cognitively normal individuals</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>94</td>
+        <td>AD: individuals with Alzheimer's disease</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>152</td>
+        <td>LMCI: individuals with mild cognitive impairment</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>222</td>
+        <td>SMC: individuals with subjective memory complaints</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>210</td>
+        <td>EMCI: individuals with early mild cognitive impairment</td>
+      </tr>
+    </table>
+    <p>One of the main benefits of GNNs is their ability to model graph-structured data, which is a natural fit for brain connectivity data since it can be represented as a graph with nodes representing brain regions and edges representing the strength of the connectivity between them.</p>
+
+    <p>GNNs can be used to learn representations of brain connectivity graphs that capture important features and patterns in the data, which can be used for downstream tasks such as classification of disease states, prediction of clinical outcomes, and identification of biomarkers. GNNs can also be used for clustering analysis, where they can group similar connectivity patterns together and identify subgroups within the dataset.
+      
+      Overall, GNNs provide a powerful tool for analyzing brain connectivity datasets, enabling researchers to gain new insights into brain function and disease.</p>
+  </body>
+</html>
